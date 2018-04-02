@@ -13,4 +13,5 @@ To use this tool:
 - Expand the tool ReclassVectorWhite
 - Click on ReclassVectorWhite to launch the tool
 
-SeattleReclassified: ![alt text](https://github.com/UW-Geog458-Win2018/SWhite/blob/master/Geoprocessing/SeattleReclassified.png)
+SeattleReclassified:
+![alt text](https://github.com/sheenawhite/Portfolio/blob/master/GeoprocessingToolsAndServices/SeattleReclassified.png "Seattle Reclassified")
