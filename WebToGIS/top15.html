@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS = false; L_NO_TOUCH = false; L_DISABLE_3D = false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet" href="https://rawgit.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css" />
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <style> #map_b9c3a022660c484080964ce2031eb44d {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_b9c3a022660c484080964ce2031eb44d" ></div>
+        
+</body>
+<script>    
+    
+
+            
+                var bounds = null;
+            
+
+            var map_b9c3a022660c484080964ce2031eb44d = L.map(
+                                  'map_b9c3a022660c484080964ce2031eb44d',
+                                  {center: [34.153475,-117.176504],
+                                  zoom: 3,
+                                  maxBounds: bounds,
+                                  layers: [],
+                                  worldCopyJump: false,
+                                  crs: L.CRS.EPSG3857
+                                 });
+            
+        
+    
+            var tile_layer_6474306037b34959af236dc912e9ee6a = L.tileLayer(
+                'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png',
+                {
+  "attribution": null, 
+  "detectRetina": false, 
+  "maxZoom": 18, 
+  "minZoom": 1, 
+  "noWrap": false, 
+  "subdomains": "abc"
+}
+                ).addTo(map_b9c3a022660c484080964ce2031eb44d);
+        
+    
+
+            var marker_151a259d1d694420a6d31a76f35154a6 = L.marker(
+                [35.6869996,-105.9377997],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_b4b1ca6260f5443da811a2124d4c215d = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_151a259d1d694420a6d31a76f35154a6.setIcon(icon_b4b1ca6260f5443da811a2124d4c215d);
+            
+    
+            var popup_a2f6e3d256cb405092ff2d2905673828 = L.popup({maxWidth: '300'});
+
+            
+                var html_5d7519f43d12421394c863910477adbd = $('<div id="html_5d7519f43d12421394c863910477adbd" style="width: 100.0%; height: 100.0%;">#<b>2</b><br>Santa Fe, New Mexico</div>')[0];
+                popup_a2f6e3d256cb405092ff2d2905673828.setContent(html_5d7519f43d12421394c863910477adbd);
+            
+
+            marker_151a259d1d694420a6d31a76f35154a6.bindPopup(popup_a2f6e3d256cb405092ff2d2905673828);
+
+            
+        
+    
+
+            var marker_deb820e7f8684b5ab537a533b306fb20 = L.marker(
+                [35.6009498,-82.5540161],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_e971c6b91f694ae8a3b80dc0361b6a66 = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_deb820e7f8684b5ab537a533b306fb20.setIcon(icon_e971c6b91f694ae8a3b80dc0361b6a66);
+            
+    
+            var popup_cb6d9cc64a434947b4bd4b8e28bae466 = L.popup({maxWidth: '300'});
+
+            
+                var html_523e0713942744dd8e639623f17d844f = $('<div id="html_523e0713942744dd8e639623f17d844f" style="width: 100.0%; height: 100.0%;">#<b>9</b><br>Asheville, North Carolina</div>')[0];
+                popup_cb6d9cc64a434947b4bd4b8e28bae466.setContent(html_523e0713942744dd8e639623f17d844f);
+            
+
+            marker_deb820e7f8684b5ab537a533b306fb20.bindPopup(popup_cb6d9cc64a434947b4bd4b8e28bae466);
+
+            
+        
+    
+
+            var marker_f162bc8ad3294e8c8f350aa95058b93c = L.marker(
+                [37.2708788,-76.7074042],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_03ef8b9db17040cea8764406d41e5f5d = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f162bc8ad3294e8c8f350aa95058b93c.setIcon(icon_03ef8b9db17040cea8764406d41e5f5d);
+            
+    
+            var popup_8aa86eb7e9894881933bc236aa09134e = L.popup({maxWidth: '300'});
+
+            
+                var html_3bd085a41f4b4ea18fcfe8521b1b8f28 = $('<div id="html_3bd085a41f4b4ea18fcfe8521b1b8f28" style="width: 100.0%; height: 100.0%;">#<b>13</b><br>Williamsburg, Virginia</div>')[0];
+                popup_8aa86eb7e9894881933bc236aa09134e.setContent(html_3bd085a41f4b4ea18fcfe8521b1b8f28);
+            
+
+            marker_f162bc8ad3294e8c8f350aa95058b93c.bindPopup(popup_8aa86eb7e9894881933bc236aa09134e);
+
+            
+        
+    
+
+            var marker_0aa9e480a82442a3a409daadc4aff7a0 = L.marker(
+                [42.3604823,-71.0595678],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_c1ed168c718a4eee81ac4693071113b9 = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0aa9e480a82442a3a409daadc4aff7a0.setIcon(icon_c1ed168c718a4eee81ac4693071113b9);
+            
+    
+            var popup_20d2fa8330334112aaae8bd138c8c2fb = L.popup({maxWidth: '300'});
+
+            
+                var html_6d7317e8635e48edb23feb429330e5aa = $('<div id="html_6d7317e8635e48edb23feb429330e5aa" style="width: 100.0%; height: 100.0%;">#<b>14</b><br>Boston, Massachusetts</div>')[0];
+                popup_20d2fa8330334112aaae8bd138c8c2fb.setContent(html_6d7317e8635e48edb23feb429330e5aa);
+            
+
+            marker_0aa9e480a82442a3a409daadc4aff7a0.bindPopup(popup_20d2fa8330334112aaae8bd138c8c2fb);
+
+            
+        
+    
+
+            var marker_2bb8fde9f26345359345570f2cc43dc8 = L.marker(
+                [40.7306458,-73.9866136],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_9b1970f7e741447b81d85857e7aa06a8 = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2bb8fde9f26345359345570f2cc43dc8.setIcon(icon_9b1970f7e741447b81d85857e7aa06a8);
+            
+    
+            var popup_f42c8b4f1528433289004d186daf05f3 = L.popup({maxWidth: '300'});
+
+            
+                var html_a62f8bf3fe5c4ecabc4c47dffd9efabd = $('<div id="html_a62f8bf3fe5c4ecabc4c47dffd9efabd" style="width: 100.0%; height: 100.0%;">#<b>7</b><br>New York City</div>')[0];
+                popup_f42c8b4f1528433289004d186daf05f3.setContent(html_a62f8bf3fe5c4ecabc4c47dffd9efabd);
+            
+
+            marker_2bb8fde9f26345359345570f2cc43dc8.bindPopup(popup_f42c8b4f1528433289004d186daf05f3);
+
+            
+        
+    
+
+            var marker_785cd28f943f4e2aaadf0fc2925c277c = L.marker(
+                [45.5202471,-122.6741949],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_dd4c695366074528af7eaf0e1548babe = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_785cd28f943f4e2aaadf0fc2925c277c.setIcon(icon_dd4c695366074528af7eaf0e1548babe);
+            
+    
+            var popup_12e5e11ef78a494ea1e3a5204943dc25 = L.popup({maxWidth: '300'});
+
+            
+                var html_feb1c44cdd29410ab03b16fa3350e2f3 = $('<div id="html_feb1c44cdd29410ab03b16fa3350e2f3" style="width: 100.0%; height: 100.0%;">#<b>15</b><br>Portland, Oregon</div>')[0];
+                popup_12e5e11ef78a494ea1e3a5204943dc25.setContent(html_feb1c44cdd29410ab03b16fa3350e2f3);
+            
+
+            marker_785cd28f943f4e2aaadf0fc2925c277c.bindPopup(popup_12e5e11ef78a494ea1e3a5204943dc25);
+
+            
+        
+    
+
+            var marker_8ef188a0296e4146903be62203c07aab = L.marker(
+                [29.4246002,-98.4951405],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_097abd31e81d4309b6ac4b6cfd4aa6f0 = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8ef188a0296e4146903be62203c07aab.setIcon(icon_097abd31e81d4309b6ac4b6cfd4aa6f0);
+            
+    
+            var popup_f0faeed629d543bc8e55481d341c1a1e = L.popup({maxWidth: '300'});
+
+            
+                var html_e0b086cee5d4405f9e1f541deb3671d2 = $('<div id="html_e0b086cee5d4405f9e1f541deb3671d2" style="width: 100.0%; height: 100.0%;">#<b>10</b><br>San Antonio, Texas</div>')[0];
+                popup_f0faeed629d543bc8e55481d341c1a1e.setContent(html_e0b086cee5d4405f9e1f541deb3671d2);
+            
+
+            marker_8ef188a0296e4146903be62203c07aab.bindPopup(popup_f0faeed629d543bc8e55481d341c1a1e);
+
+            
+        
+    
+
+            var marker_ccd4d12dc51c4d4d834d9af3086058c5 = L.marker(
+                [36.1622296,-86.7743531],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_a3845f463b184f3da6c7eb39cdd85f2e = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ccd4d12dc51c4d4d834d9af3086058c5.setIcon(icon_a3845f463b184f3da6c7eb39cdd85f2e);
+            
+    
+            var popup_9dd38db31d5a4168bbbbf34f297808de = L.popup({maxWidth: '300'});
+
+            
+                var html_d2f6aaf58ea244c48a8ef22b1654c263 = $('<div id="html_d2f6aaf58ea244c48a8ef22b1654c263" style="width: 100.0%; height: 100.0%;">#<b>5</b><br>Nashville, Tennessee</div>')[0];
+                popup_9dd38db31d5a4168bbbbf34f297808de.setContent(html_d2f6aaf58ea244c48a8ef22b1654c263);
+            
+
+            marker_ccd4d12dc51c4d4d834d9af3086058c5.bindPopup(popup_9dd38db31d5a4168bbbbf34f297808de);
+
+            
+        
+    
+
+            var marker_49a82195236d4dc6a7a720a3b5399065 = L.marker(
+                [32.0835407,-81.0998342],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_4611963daa5e4b1bb92ae1dd255aa9d6 = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_49a82195236d4dc6a7a720a3b5399065.setIcon(icon_4611963daa5e4b1bb92ae1dd255aa9d6);
+            
+    
+            var popup_27c983d620e041a5b446bdc09cd7089c = L.popup({maxWidth: '300'});
+
+            
+                var html_efe8a61251534df08a2dcb96a6cb2e57 = $('<div id="html_efe8a61251534df08a2dcb96a6cb2e57" style="width: 100.0%; height: 100.0%;">#<b>3</b><br>Savannah, Georgia</div>')[0];
+                popup_27c983d620e041a5b446bdc09cd7089c.setContent(html_efe8a61251534df08a2dcb96a6cb2e57);
+            
+
+            marker_49a82195236d4dc6a7a720a3b5399065.bindPopup(popup_27c983d620e041a5b446bdc09cd7089c);
+
+            
+        
+    
+
+            var marker_8584403b65fe46a98d68cf3516c8c5f1 = L.marker(
+                [32.7876012,-79.9402728],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_d46116ed417c4d2cbf52df1d385d20f5 = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8584403b65fe46a98d68cf3516c8c5f1.setIcon(icon_d46116ed417c4d2cbf52df1d385d20f5);
+            
+    
+            var popup_e33755eec8794856b5d8eab622911a12 = L.popup({maxWidth: '300'});
+
+            
+                var html_c97f389bcc33496fb9caa6130e5d7ab9 = $('<div id="html_c97f389bcc33496fb9caa6130e5d7ab9" style="width: 100.0%; height: 100.0%;">#<b>1</b><br>Charleston, South Carolina</div>')[0];
+                popup_e33755eec8794856b5d8eab622911a12.setContent(html_c97f389bcc33496fb9caa6130e5d7ab9);
+            
+
+            marker_8584403b65fe46a98d68cf3516c8c5f1.bindPopup(popup_e33755eec8794856b5d8eab622911a12);
+
+            
+        
+    
+
+            var marker_5ef6f398be084e79899fc92aa3751477 = L.marker(
+                [27.6444687,-113.4192009],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_d6d756d015e54dc789c4c3171ef0db06 = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5ef6f398be084e79899fc92aa3751477.setIcon(icon_d6d756d015e54dc789c4c3171ef0db06);
+            
+    
+            var popup_330d9015beb94494900345938a01f161 = L.popup({maxWidth: '300'});
+
+            
+                var html_df4aebb1b6fc4250a59545d02172163c = $('<div id="html_df4aebb1b6fc4250a59545d02172163c" style="width: 100.0%; height: 100.0%;">#<b>11</b><br>San Francisco, California</div>')[0];
+                popup_330d9015beb94494900345938a01f161.setContent(html_df4aebb1b6fc4250a59545d02172163c);
+            
+
+            marker_5ef6f398be084e79899fc92aa3751477.bindPopup(popup_330d9015beb94494900345938a01f161);
+
+            
+        
+    
+
+            var marker_21265df04fe044258010b2bdb7894853 = L.marker(
+                [21.304547,-157.8556764],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_b12e431d722d4111a27a4a20e26c385d = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_21265df04fe044258010b2bdb7894853.setIcon(icon_b12e431d722d4111a27a4a20e26c385d);
+            
+    
+            var popup_3f452055580a4bafbf7d06d69740995a = L.popup({maxWidth: '300'});
+
+            
+                var html_fa0f4f8e6eac45d58bd885ea07a86b46 = $('<div id="html_fa0f4f8e6eac45d58bd885ea07a86b46" style="width: 100.0%; height: 100.0%;">#<b>6</b><br>Honolulu, Hawaii</div>')[0];
+                popup_3f452055580a4bafbf7d06d69740995a.setContent(html_fa0f4f8e6eac45d58bd885ea07a86b46);
+            
+
+            marker_21265df04fe044258010b2bdb7894853.bindPopup(popup_3f452055580a4bafbf7d06d69740995a);
+
+            
+        
+    
+
+            var marker_850f50ec2dbb4894af14c40f6077471d = L.marker(
+                [30.03280175,-89.9750054503],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_9b3e64e0d79046ab920a71aa7ca170c5 = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_850f50ec2dbb4894af14c40f6077471d.setIcon(icon_9b3e64e0d79046ab920a71aa7ca170c5);
+            
+    
+            var popup_025dc2c914044621a60ecff22cdcdc51 = L.popup({maxWidth: '300'});
+
+            
+                var html_255ea39735a54fcf993ae159bad0f437 = $('<div id="html_255ea39735a54fcf993ae159bad0f437" style="width: 100.0%; height: 100.0%;">#<b>4</b><br>New Orleans, Louisiana</div>')[0];
+                popup_025dc2c914044621a60ecff22cdcdc51.setContent(html_255ea39735a54fcf993ae159bad0f437);
+            
+
+            marker_850f50ec2dbb4894af14c40f6077471d.bindPopup(popup_025dc2c914044621a60ecff22cdcdc51);
+
+            
+        
+    
+
+            var marker_5d94b3ccca384badace596d48e3d1a84 = L.marker(
+                [30.2711286,-97.7436995],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_b9d77be029134837b196bbb6f982c854 = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5d94b3ccca384badace596d48e3d1a84.setIcon(icon_b9d77be029134837b196bbb6f982c854);
+            
+    
+            var popup_7c38f86af5db42ffbcac4aee2cacbf3c = L.popup({maxWidth: '300'});
+
+            
+                var html_02abcef6e397490087913a97827efbf2 = $('<div id="html_02abcef6e397490087913a97827efbf2" style="width: 100.0%; height: 100.0%;">#<b>8</b><br>Austin, Texas</div>')[0];
+                popup_7c38f86af5db42ffbcac4aee2cacbf3c.setContent(html_02abcef6e397490087913a97827efbf2);
+            
+
+            marker_5d94b3ccca384badace596d48e3d1a84.bindPopup(popup_7c38f86af5db42ffbcac4aee2cacbf3c);
+
+            
+        
+    
+
+            var marker_c7b4fee151c74eee8d0f00449c11f9b7 = L.marker(
+                [41.8755546,-87.6244212],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b9c3a022660c484080964ce2031eb44d);
+            
+    
+
+                var icon_8c9199ac841447e3ac6f6278d0ca1eb2 = L.AwesomeMarkers.icon({
+                    icon: 'star',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c7b4fee151c74eee8d0f00449c11f9b7.setIcon(icon_8c9199ac841447e3ac6f6278d0ca1eb2);
+            
+    
+            var popup_5d1a6c29725b48f09e89eac78ef3c355 = L.popup({maxWidth: '300'});
+
+            
+                var html_d6cb5ced56de4f07b9ee3ca54a77e404 = $('<div id="html_d6cb5ced56de4f07b9ee3ca54a77e404" style="width: 100.0%; height: 100.0%;">#<b>12</b><br>Chicago, Illinois</div>')[0];
+                popup_5d1a6c29725b48f09e89eac78ef3c355.setContent(html_d6cb5ced56de4f07b9ee3ca54a77e404);
+            
+
+            marker_c7b4fee151c74eee8d0f00449c11f9b7.bindPopup(popup_5d1a6c29725b48f09e89eac78ef3c355);
+
+            
+        
+</script>
