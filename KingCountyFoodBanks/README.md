@@ -24,12 +24,12 @@
 
 - King County - Race/Ethnicity:
 
-  ![alt text](https://github.com/sheenawhite/Portfolio/Web%20Map/RaceEthnicity.JPG "Race/Ethnicity")
+  ![alt text](https://github.com/sheenawhite/Portfolio/blob/master/KingCountyFoodBanks/Web%20Map/RaceEthnicity.JPG "Race/Ethnicity")
 
 - King County - Income:
 
-  ![alt text](https://github.com/sheenawhite/Portfolio/Web%20Map/Income.JPG "Income")
+  ![alt text](https://github.com/sheenawhite/Portfolio/blob/master/KingCountyFoodBanks/Web%20Map/Income.JPG "Income")
 
 - King County - Income - U-District:
 
-  ![alt text](https://github.com/sheenawhite/Portfolio/Web%20Map/U-District.JPG "U-District - Income")
+  ![alt text](https://github.com/sheenawhite/Portfolio/blob/master/KingCountyFoodBanks/Web%20Map/U-District.JPG "U-District - Income")
