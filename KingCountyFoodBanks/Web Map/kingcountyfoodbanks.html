@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>King County Food Banks</title>
+		<script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+		<link rel='stylesheet' type='text/css' href='style.css'>
+	</head>
+	<body>
+		<div id='map'></div>
+		<div class='map-overlay' id='features'><h2>King County</h2><h3>Food Banks, Demographic Profile, and Average Income</h3><div id='description'><p>This interactive map displays food bank locations in King County, the demographic profile of Census Tracts in King County, and average income of Census Tracts in King County.<br><br>Click on the buttons below to switch between maps: showing only food banks, showing food banks and race/ethnicity, or showing food banks and income. Hover over the food bank icons to view more information, and click the icon to zoom into it's location.</p></div></div>
+		<button id='home'>Home</button>
+		<div id='menu'>
+			<button id='base'>Food Banks</button>
+			<button id='race'>Race/Ethnicity</button>
+			<button id='income'>Income</button>
+		</div>
+		<div class='map-overlay' id='legend'>
+			<font size='4em'><b>LEGEND</b></font>
+			<br>
+			<br>
+			<div id='legend1'><b>Race/Ethnicity</b></div>
+			<br>
+			<div id='legend2'><b>Income</b></div>
+		</div>
+		<script type='text/javascript'>
+			mapboxgl.accessToken = 'pk.eyJ1Ijoic2hlZW5hd2hpdGUiLCJhIjoiY2plMGF0NGprMHBkMDJ4cWwzMmFjamV1ciJ9.f7RWpJwEzqS_2bz32Ls20A';
+			
+			// Styles:
+			// 		Base (includes only food banks): mapbox://styles/sheenawhite/cjehhwx8k1ccu2rmkfpubwn3x
+			// 		KingCategory (includes King County Race/Ethnicity and food banks): mapbox://styles/sheenawhite/cjehhrn0a0ie32rqe2gl7dtuy
+			// 		KingIncome (includes King County Income and food banks): mapbox://styles/sheenawhite/cjeaczl2j0sqf2sln69oyplfn
+			
+			// Create map.
+			var map = new mapboxgl.Map({
+				container: 'map',
+				style: 'mapbox://styles/sheenawhite/cjehhwx8k1ccu2rmkfpubwn3x',
+			});
+			
+			// Add home view extent.
+			document.getElementById('home').addEventListener('click', function () {
+				map.flyTo({
+					center: [-121.919048, 47.445168],
+					zoom: 8.5
+				});
+			});
+			
+			// Create a popup, but don't add it to the map yet.
+			var hover = new mapboxgl.Popup({
+				closeButton: false,
+				closeOnClick: false
+			});
+			
+			// Add popup to map.
+			map.on('mouseenter', 'foodbanks', function(e) {
+				// Change the cursor to a pointer when the mouse is over the top15 layer.
+				map.getCanvas().style.cursor = 'pointer';
+		
+				var coordinates = e.features[0].geometry.coordinates.slice();
+				var address = e.features[0].properties.Address;
+				var addressList = address.replace(', King County, Washington,', '');
+				var addressList2 = addressList.split(',');
+				var description = '<b>Food Bank:</b><br>';
+				for (i = 0; i < addressList2.length - 1; i++) {
+					description += addressList2[i] + '<br>';
+				}
+		
+				// Ensure that if the map is zoomed out such that multiple
+				// copies of the feature are visible, the popup appears
+				// over the copy being pointed to.
+				while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+					coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+				}
+		
+				// Populate the popup and set its coordinates
+				// based on the feature found.
+				hover.setLngLat(coordinates)
+					.setHTML(description)
+					.addTo(map);
+			});
+			
+			// Change it back to a non-pointer when it leaves.
+			map.on('mouseleave', 'foodbanks', function() {
+				map.getCanvas().style.cursor = '';
+				hover.remove();
+			});
+			
+			// Add pop up to point markers and zoom in to location.
+			map.on('click', function(e) {
+				var features = map.queryRenderedFeatures(e.point, {
+					layers: ['foodbanks']
+				});
+				
+				if (!features.length) {
+					return;
+				}
+				
+				var feature = features[0];
+				
+				map.flyTo({
+					center: feature.geometry.coordinates,
+					zoom: 13
+				});
+			});
+			
+			var layerList = document.getElementById('menu');
+			var inputs = layerList.getElementsByTagName('button');
+			
+			// Add Race/Ethnicity legend to the map.
+			var raceLayers = ['Non-White Area', 'Diverse Area', 'White Area'];
+			var raceColors = ['#edf8b1', '#7fcdbb', '#2c7fb8'];
+			for (i = 0; i < raceLayers.length; i++) {
+				var layerRace = raceLayers[i];
+				var raceColor = raceColors[i];
+				var item1 = document.createElement('div');
+				var key1 = document.createElement('span');
+				key1.className = 'legend-key';
+				key1.style.backgroundColor = raceColor;
+			  
+				var value1 = document.createElement('span');
+				value1.innerHTML = layerRace;
+				item1.appendChild(key1);
+				item1.appendChild(value1);
+				legend1.appendChild(item1);
+			}
+			//var raceLegend = document.getElementById('legend1');
+			//var displaySetting1 = raceLegend.style.visibility;
+			
+			// Add Income legend to the map.
+			var incomeLayers = ['Low', 'Medium', 'High'];
+			var incomeColors = ['#edf8b1', '#7fcdbb', '#2c7fb8'];
+			for (i = 0; i < incomeLayers.length; i++) {
+				var layerIncome = incomeLayers[i];
+				var incomeColor = incomeColors[i];
+				var item2 = document.createElement('div');
+				var key2 = document.createElement('span');
+				key2.className = 'legend-key';
+				key2.style.backgroundColor = incomeColor;
+			  
+				var value2 = document.createElement('span');
+				value2.innerHTML = layerIncome;
+				item2.appendChild(key2);
+				item2.appendChild(value2);
+				legend2.appendChild(item2);
+			}
+			//var incomeLegend = document.getElementById('legend2');
+			//var displaySetting2 = incomeLegend.style.visibility;
+			
+			// Switch between layers.
+			function switchLayer(layer) {
+			    var layerId = layer.target.id;
+				if (layerId == 'base') {
+					map.setStyle('mapbox://styles/sheenawhite/cjehhwx8k1ccu2rmkfpubwn3x');
+				}
+				if (layerId == 'race') {
+					map.setStyle('mapbox://styles/sheenawhite/cjehhrn0a0ie32rqe2gl7dtuy');
+					//if (displaySetting2 == 'visible') {
+					//	incomeLegend.style.visibility = 'hidden';
+					//}
+				}
+				if (layerId == 'income') {
+					map.setStyle('mapbox://styles/sheenawhite/cjeaczl2j0sqf2sln69oyplfn');
+					//if (displaySetting1 == 'visible') {
+					//	raceLegend.style.visibility = 'hidden';
+					//}
+				}
+			}
+			
+			for (var i = 0; i < inputs.length; i++) {
+				inputs[i].onclick = switchLayer;
+			}
+
+			// *THIS COMMENTED OUT BLOCK DOESN'T WORK*
+			// Add KingReclassified.geojson:
+			//  Link: https://github.com/sheenawhite/Practice/blob/master/KingReclassified.geojson
+			//function incomeStyle(feature) {
+			//	if (feature[0].properties.Income == 'High') {
+			//		return {
+			//			"fill-color":'blue',
+			//			"fill-opacity": 0.8
+			//		}
+			//	}
+			//	else if (feature[0].properties.Income == 'Medium') {
+			//		return {
+			//			"fill-color":'red',
+			//			"fill-opacity": 0.8
+			//		}
+			//	}
+			//	else {
+			//		return {
+			//			"fill-color":'green',
+			//			"fill-opacity": 0.8
+			//		}
+			//	}
+			//}
+			//
+			//function raceStyle() {
+			//	return {
+			//		'fill-color': 'red',
+			//		'fill-opacity': 0.8
+			//	}
+			//}
+			//
+			//map.on('load', function () {
+			//	map.addSource('king', {
+			//		type: 'geojson',
+			//		data: 'https://raw.githubusercontent.com/UW-Geog458-Win2018/Group6/master/KingReclassified/KingReclassified.geojson?token=Ahf2uQmGl9XmIvF3859xOv67jz6WYX7Cks5arAjmwA%3D%3D'
+			//	});
+			//	map.addLayer({
+			//		id: "kinglayer",
+			//		type: "fill",
+			//		source: 'king',
+			//		layout: {},
+			//		paint: incomeStyle(feature)
+			//	});
+			//});
+			
+			// Add zoom and rotation controls to the map.
+			map.addControl(new mapboxgl.NavigationControl());
+		</script>
+	</body>
+</html>
