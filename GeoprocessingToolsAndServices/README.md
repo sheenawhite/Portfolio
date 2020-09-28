@@ -11,6 +11,6 @@ This project consisted of creating an ArcMap Tool that takes a shapefile and rec
 - **ReclassTable.dbf**: reclassification table
 
 Population density <u>before</u> reclassification.
-![Before Reclassification](https://github.com/sheenawhite/Portfolio/blob/master/GeoprocessingToolsAndServices/SeattleReclassified.png)
+![alt text](https://github.com/sheenawhite/Portfolio/blob/master/GeoprocessingToolsAndServices/SeattleReclassified.png "Before Reclassification")
 Population density <u>after</u> reclassification.
-![After Reclassification](https://github.com/sheenawhite/Portfolio/blob/master/GeoprocessingToolsAndServices/SeattleReclassified.png)
+![alt text](https://github.com/sheenawhite/Portfolio/blob/master/GeoprocessingToolsAndServices/SeattleReclassified.png "After Reclassification")
