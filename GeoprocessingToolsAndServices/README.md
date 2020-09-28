@@ -1,17 +1,16 @@
 # Geoprocessing: Tools and Services
 
-This folder contains an ArcGIS Geoprocessing Service called **ReclassVectorWhite**.
+This project consisted of creating an ArcMap Tool that takes a shapefile and reclassifies one of the fields based on a table of different ranges of numbers. In this case, the shapefile used was of King County block groups and the field that was reclassified was *PopDens12* corresponding to the population density. 
 
-To use this tool:
-- Open ArcGIS Desktop and go to Catalog --> GIS Servers --> Add ArcGIS Server
-- Click on the 'Publish GIS Services', then click 'Next'
-- Use this Server URL: http://geog-gs01.geog.uw.edu:6080/arcgis/ 
-- Use your UW NetID login and password to connect
-- Click 'Finish'
-- Under the GIS Servers folder, expand the connection 'arcgis on geog-gs01.geog.uw.edu_6080 (publisher)'
-- Navigate to the folder 458_White
-- Expand the tool ReclassVectorWhite
-- Click on ReclassVectorWhite to launch the tool
+*An ArcMap Geoprocessing Service was created but is no longer accessible.*
 
-SeattleReclassified:
-![alt text](https://github.com/sheenawhite/Portfolio/blob/master/GeoprocessingToolsAndServices/SeattleReclassified.png "Seattle Reclassified")
+### <u>Contents:</u>
+
+- **ReclassVectorWhite.py**: python script for reclassification tool
+
+- **ReclassTable.dbf**: reclassification table
+
+Population density <u>before</u> reclassification.
+![Before Reclassification](https://github.com/sheenawhite/Portfolio/blob/master/GeoprocessingToolsAndServices/SeattleReclassified.png)
+Population density <u>after</u> reclassification.
+![After Reclassification](https://github.com/sheenawhite/Portfolio/blob/master/GeoprocessingToolsAndServices/SeattleReclassified.png)
